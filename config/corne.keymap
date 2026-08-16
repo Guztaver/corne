@@ -196,7 +196,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Normal {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BSPC |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -209,6 +209,8 @@
 &kp LEFT_SHIFT  &kp Z  &kp X  &kp C          &kp V  &kp B        &kp N      &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp ESCAPE
                               &kp LEFT_META  &mo 1  &kp SPACE    &kp ENTER  &mo 2  &kp LEFT_ALT
             >;
+
+            label = "Normal";
         };
 
         Numbers {
@@ -222,7 +224,7 @@
 &kp TAB         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N4  &tog 4    &kp CARET  &trans    &trans        &trans     &trans  &kp BSPC
 &kp N0          &sk N5        &kp NUMBER_6  &kp N7        &sk N8  &kp N9    &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT  &trans  &tog 3
 &studio_unlock  &trans        &trans        &trans        &trans  &trans    &kp DEL    &kp HOME  &kp END       &trans     &trans  &bootloader
-                                            &kp LGUI      &trans  &trans    &trans     &trans    &kp LEFT_ALT
+                                            &kp LGUI      &trans  &trans    &kp ENTER  &trans    &kp LEFT_ALT
             >;
 
             label = "Numb";
@@ -233,7 +235,7 @@
 &kp LEFT_PARENTHESIS   &kp EXCL            &kp AT     &kp HASH       &kp DOLLAR  &kp LEFT_BRACE     &kp UNDERSCORE  &kp AMPS  &kp STAR   &kp MINUS  &kp PLUS       &kp LS(GRAVE)
 &kp RIGHT_PARENTHESIS  &kp PERCENT         &kp CARET  &kp AMPERSAND  &kp ASTRK   &kp RIGHT_BRACE    &kp EQUAL       &kp DLLR  &kp PRCNT  &kp CARET  &kp BACKSLASH  &kp GRAVE
 &trans                 &sk LG(LEFT_SHIFT)  &trans     &trans         &trans      &trans             &kp MINUS       &kp EXCL  &kp AT     &kp HASH   &kp PIPE       &kp TILDE
-                                                      &trans         &trans      &trans             &trans          &trans    &trans
+                                                      &trans         &mo 3       &trans             &trans          &trans    &trans
             >;
 
             label = "Symb";
@@ -244,16 +246,16 @@
 &kp F17  &kp F1   &kp F2   &kp F3   &kp F4   &kp F12    &bt BT_SEL 0  &kp C_VOLUME_UP  &kp C_MUTE        &kp C_VOL_DN  &bt BT_CLR    &sys_reset
 &kp F10  &kp F5   &kp F6   &kp F7   &kp F8   &kp F9     &bt BT_SEL 1  &kp C_PREVIOUS   &kp C_PLAY_PAUSE  &kp C_NEXT    &out OUT_TOG  &bootloader
 &kp F16  &kp F11  &kp F12  &kp F13  &kp F14  &kp F15    &bt BT_SEL 2  &trans           &trans            &trans        &out OUT_USB  &out OUT_BLE
-                           &kp F18  &kp F19  &kp F20    &bootloader   &trans           &trans
+                           &kp F18  &kp F19  &kp F20    &to 0         &trans           &trans
             >;
         };
 
         Gaming {
             bindings = <
-&kp TAB    &kp Q      &kp W  &kp E       &kp R         &kp I        &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL  &kp A      &kp S  &kp D       &kp F         &kp P        &trans  &trans  &trans  &trans  &trans  &trans
-&mo 5      &kp LCTRL  &kp Z  &kp X       &kp C         &kp B        &trans  &trans  &trans  &trans  &trans  &trans
-                             &kp ESCAPE  &kp LEFT_ALT  &kp SPACE    &tog 4  &trans  &trans
+&kp TAB    &kp Q      &kp W  &kp E       &kp R         &kp I        &kp C_PREV         &kp C_PLAY_PAUSE   &kp K_NEXT       &trans  &trans  &trans
+&kp LCTRL  &kp A      &kp S  &kp D       &kp F         &kp P        &kp C_VOL_DN       &kp K_MUTE         &kp C_VOLUME_UP  &trans  &trans  &trans
+&mo 5      &kp LCTRL  &kp Z  &kp X       &kp C         &kp B        &kp LS(LC(LA(I)))  &kp LS(LC(LA(K)))  &kp LS(LA(X))    &trans  &trans  &trans
+                             &kp ESCAPE  &kp LEFT_ALT  &kp SPACE    &tog 4             &trans             &trans
             >;
 
             label = "Game";

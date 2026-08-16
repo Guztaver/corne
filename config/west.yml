@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: zmk-nice-oled-zz
       url: https://github.com/zzuse/zmk-nice-oled-zz
-      revision: main
+      revision: d65bc37d6683a7cea31cbc4b9cb209e00c2b1344
   self:
     path: config

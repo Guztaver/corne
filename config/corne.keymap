@@ -148,8 +148,18 @@
 
         tilde {
             bindings = <&kp TILDE>;
-            key-positions = <14 13>;
+            key-positions = <18 19>;
             layers = <0>;
+        };
+
+        caret {
+            bindings = <&kp CARET>;
+            key-positions = <6 7>;
+        };
+
+        dash {
+            bindings = <&kp MINUS>;
+            key-positions = <30 31>;
         };
     };
 
@@ -221,10 +231,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N4  &tog 4    &kp CARET  &trans    &trans        &trans     &trans  &kp BSPC
-&kp N0          &sk N5        &kp NUMBER_6  &kp N7        &sk N8  &kp N9    &kp LEFT   &kp DOWN  &kp UP        &kp RIGHT  &trans  &tog 3
-&studio_unlock  &trans        &trans        &trans        &trans  &trans    &kp DEL    &kp HOME  &kp END       &trans     &trans  &bootloader
-                                            &kp LGUI      &trans  &trans    &kp ENTER  &trans    &kp LEFT_ALT
+&kp LA(TAB)     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N4  &tog 4    &trans    &trans    &trans        &trans     &kp CARET  &kp BSPC
+&kp N0          &sk N5        &kp NUMBER_6  &kp N7        &sk N8  &kp N9    &kp LEFT  &kp DOWN  &kp UP        &kp RIGHT  &trans     &tog 3
+&studio_unlock  &trans        &trans        &trans        &trans  &trans    &kp DEL   &kp HOME  &kp END       &trans     &trans     &bootloader
+                                            &kp LGUI      &trans  &trans    &trans    &trans    &kp LEFT_ALT
             >;
 
             label = "Numb";
